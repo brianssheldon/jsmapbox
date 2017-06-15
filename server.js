@@ -67,6 +67,62 @@ app.get("*", function(request, response) {
 });
 
 
+// tile cannon
+app.get('/rmm/getTiles/:s/:z/:x/:y.:t', function(req, res) {
+
+    var thepath = __dirname + '/../' + req.params.s + '.mbtiles';
+
+    new MBTiles(thepath, function(err, mbtiles) {
+
+        if (err) {
+           console.log("error opening database");
+           return res.status(500).send("error opening the database");
+        }
+
+        mbtiles.getTile(req.params.z, req.params.x, req.params.y, function(err, tile, headers) {
+
+            if (err) {
+                res.set({
+                    "Content-Type": "text/plain"
+                });
+                res.status(404).send('Tile rendering error: ' + err + '\n');
+            } else {
+                // console.log('getContentType', getContentType(req.params.t));
+                res.set(getContentType(req.params.t));
+                // console.log('tile', tile);
+                res.send(tile);
+            }
+
+        });
+    });
+});
+
+// Set return header
+function getContentType(t) {
+    var header = {};
+
+    // CORS
+    header["Access-Control-Allow-Origin"] = "*";
+    header["Access-Control-Allow-Headers"] = "Origin, X-Requested-With, Content-Type, Accept";
+
+    // Cache
+    //header["Cache-Control"] = "public, max-age=2592000";
+
+    // request specific headers
+    if (t === "png") {
+        header["Content-Type"] = "image/png";
+    }
+    if (t === "jpg") {
+        header["Content-Type"] = "image/jpeg";
+    }
+    if (t === "pbf") {
+        header["Content-Type"] = "application/x-protobuf";
+        header["Content-Encoding"] = "gzip";
+    }
+
+    return header;
+}
+
 server.listen(8080);
 
 // ------------------

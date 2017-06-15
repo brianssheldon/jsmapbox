@@ -67,7 +67,7 @@ function createMarker(lng, lat, sendWS, randomImg) {
     console.log('createMarker', lat, lng);
     let marker = getGeoJsonForMarker(lng, lat);
     if (!randomImg) {
-        randomImg = 'images/a' + Math.floor((Math.random() * 8) + 1) + '.gif';
+        randomImg = '/images/a' + Math.floor((Math.random() * 8) + 1) + '.gif';
     }
     // create a DOM element for the marker
     var el = document.createElement('div');
@@ -99,7 +99,7 @@ function createMarker(lng, lat, sendWS, randomImg) {
                     lat: markers[i]._lngLat.lat
                 };
 
-                websocket2.send(JSON.stringify(newMarker));
+                // websocket2.send(JSON.stringify(newMarker));
                 markers.splice(i, 1);
             }
         }

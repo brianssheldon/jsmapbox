@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="home.css" />
+<script type="text/javascript">
+
+function updateClock() {
+    document.getElementById('time').innerHTML = new Date(); //[date, time].join(' / ');
+    setTimeout(updateClock, 1000); // call this function again in 1000ms
+}
+
+window.onload = function(){
+   updateClock(); // initial call
+ }
+
+</script>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<br>
+
+  <div style="width: 100%;">
+
+    <span>
+
+      <div style="float: left; width: 10%;">
+        <img src="/images/cbpBadge.png" style="float:left; width:75px; height:75px; ">
+      </div>
+
+      <div style="float: left; width: 50%;">
+        <!-- Uses built-in `if` helper. -->
+        {{#if showTitle}}
+        <h1>Home</h1>
+        {{/if}}
+        <h1>{{> page/title}}</h1>
+      </div>
+
+      <div id="time" style="float: right; margin-top: 10px;"> </div>
+    </span>
+  </div>
+
+<div style="padding-top: 100px;">
+
+  {{> page/nav}}
+</div>
+</body>
+</html>

@@ -3,8 +3,7 @@ var express = require('express'),
     http = require('http'),
     restler = require('restler');
     socketIo = require('socket.io'),
-    fabric = require('fabric').fabric,
-    handlebars = require('express-handlebars'),
+    // handlebars = require('express-handlebars'),
     bodyParser = require('body-parser'),
     pdfmake = require('pdfmake'),
     request = require('request');
@@ -27,28 +26,26 @@ var io = socketIo.listen(server);
 //   });
 // });
 
-var hbs = handlebars.create({
-    defaultLayout: 'main',
-	helpers: {
-        foo: function () { return 'FOO!'; },
-        bar: function () { return 'BAR!'; }
-    },
-    partialsDir: [
-        // 'shared/templates/',
-        'views/partials/'
-    ]
-});
+// var hbs = handlebars.create({
+//     defaultLayout: 'main',
+// 	helpers: {
+//         foo: function () { return 'FOO!'; },
+//         bar: function () { return 'BAR!'; }
+//     },
+//     partialsDir: [
+//         // 'shared/templates/',
+//         'views/partials/'
+//     ]
+// });
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 app.enable('view cache');
 
 app.get('/', function (req, res) {
-    res.render('home', {
-        title: 'Home'
-    });
+	response.redirect("/html/mapboxstuff1.html");
 });
 
 // ----------------------------------------------------------
@@ -123,6 +120,7 @@ function getContentType(t) {
     return header;
 }
 
+console.log('running on 8080');
 server.listen(8080);
 
 // ------------------

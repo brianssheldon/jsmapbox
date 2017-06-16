@@ -68,7 +68,7 @@ app.get("*", function(request, response) {
 
 
 // tile cannon
-app.get('/rmm/getTiles/:s/:z/:x/:y.:t', function(req, res) {
+app.get('/xxx/getTiles/:s/:z/:x/:y.:t', function(req, res) {
 
     var thepath = __dirname + '/../' + req.params.s + '.mbtiles';
 

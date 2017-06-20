@@ -1,0 +1,398 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}*/
+
+a {
+    color: #00B7FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+#canvas {
+    display: block;
+}
+
+.Row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+    /*border-bottom: 1px solid blue;*/
+}
+
+.Column {
+    display: table-cell;
+    vertical-align: top;
+    table-layout: fixed;
+    /*border: 3px solid red;*/
+}
+
+.popupdivv {
+    margin-left: 20px;
+    border: 1px solid blue;
+    background: #e6faff;
+    padding: 10px;
+    width: 450px;
+    z-index: 100;
+}
+
+.webui-popover-content {
+    background: #e6faff;
+}
+
+.popupdivv2 {
+    margin-left: 20px;
+    border: 1px solid blue;
+    background: #e6faff;
+    padding: 10px;
+    width: 500px;
+    z-index: 100;
+}
+
+.popupheading {
+    border: 1px solid blue;
+    background-color: #ccf5ff;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+}
+
+.wrap {
+    width: 500px;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
+
+.wrap2 {
+    width: 460px;
+    white-space: nowrap;
+    div.pair {
+        float: left;
+    }
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
+
+.divline {
+    float: left;
+    width: 140px;
+}
+
+.divline2 {
+    float: left;
+    width: 170px;
+}
+
+.inputt {
+    width: 300px;
+    /*float: right;*/
+}
+
+.inputt2 {
+    width: 302px;
+    /*float: right;*/
+}
+
+.buttonn {
+    padding: 4px;
+    margin: 4px;
+    width: 100px;
+    margin: 10px;
+}
+
+.dbbuttonn {
+    width: 180px;
+    margin: 10px;
+}
+
+.rightt {
+    text-align: right;
+    padding-right: 3px;
+}
+
+.centerr {
+    text-align: center;
+}
+
+.anError {
+    /*background-color: #ffff99;*/
+    /*border: 1px solid red;*/
+    padding: 3spx;
+    width: 300px;
+    float: right;
+    color: red;
+}
+
+.anError2 {
+    /*background-color: #ffff99;*/
+    /*border: 1px solid red;*/
+    padding: 3spx;
+    width: 292px;
+    float: right;
+    color: red;
+}
+
+table.dataTable.display tbody tr.odd {
+    background-color: #ffffe6;
+}
+
+.liButtons {
+    margin-left: 35px;
+    margin-bottom: 7px;
+    background-color: white;
+}
+
+.tableButton {
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.tablesText {
+    float: left;
+    font-size: 24px;
+    color: black;
+    background-color: white;
+    width: 88px;
+}
+
+.showTables {
+    border-radius: 8px;
+    float: left;
+    font-size: 14px;
+    color: black;
+    background-color: lightgray;
+    width: 88px;
+    padding: 7px;
+    text-align: center;
+}
+
+
+/*override the file path for these pngs*/
+
+table.dataTable thead .sorting {
+    background-image: url("../../configuration/images/sort_both.png")
+}
+
+table.dataTable thead .sorting_asc {
+    background-image: url("../../configuration/images/sort_asc.png")
+}
+
+table.dataTable thead .sorting_desc {
+    background-image: url("../../configuration/images/sort_desc.png")
+}
+
+table.dataTable thead .sorting_asc_disabled {
+    background-image: url("../../configuration/images/sort_asc_disabled.png")
+}
+
+table.dataTable thead .sorting_desc_disabled {
+    background-image: url("../../configuration/images/sort_desc_disabled.png")
+}
+
+.ui-tabs .ui-tabs-nav {
+    background: #d9ffcc;
+    /* light pale greenish */
+}
+
+
+/*.ui-state-active a {
+    background: lightgreen;
+}
+
+.ui-tabs .ui-tabs-panel   /* just in case you want to change the panel */
+
+
+/*{
+    background: yellow;
+}*/
+
+.scrollToTop {
+    width: 80px;
+    height: 104px;
+    padding: 6px;
+    text-align: center;
+    /*background: whiteSmoke;*/
+    /*font-weight: bold;*/
+    font-size: 10px;
+    color: #444;
+    text-decoration: none;
+    position: fixed;
+    top: 775px;
+    right: 40px;
+    display: none;
+    background: url('../../configuration/images/arrow_up_small.png') no-repeat 0px 20px;
+    background-position: center;
+}
+
+.scrollToTop:hover {
+    text-decoration: none;
+}
+
+.slidercss {
+    width: 135px;
+}
+
+.sliderdiv {
+    background-color: #C8EBBC;
+    width: 135px;
+    padding: 8px;
+    float: left;
+    height: 50px;
+}
+
+.imageIconForMenu {
+    margin-left: -25px;
+    height: 20px;
+    width: 20px;
+}
+
+
+/*.tooltipcllas {
+    background-color: whitesmoke;
+    width: 90px;
+    padding: 8px;
+    margin-left: 40px;
+    border: 1px solid blue;
+    position: absolute;
+    z-index: 101;
+}*/
+
+.markerlabel {
+    /* transform done with jquery in addMarker.js around line 80 */
+    border: 1px solid blue;
+    background-color: yellow;
+    /* blueish #ccf5ff; */
+    text-align: center;
+    padding: 3px 3px 3px 3px;
+    margin: 0 auto;
+    /*transform: translateX(-25%);*/
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    top: -30px;
+    z-index: 1;
+}
+
+.alarmPopup {
+    /*width: 80px;*/
+    /*display: inline-block;*/
+    display: table-cell;
+    cursor: default;
+}
+
+.alarmPopupRow {
+    /*width: 80px;*/
+    /*display: inline-block;*/
+    display: table-cell;
+    cursor: default;
+    display: table-row;
+    white-space: nowrap;
+}
+
+.alarmPopupRow div:hover {
+    background: yellow;
+}
+
+.toolTipForRetireEtc {
+    width: 200px;
+    background-color: white;
+    border: 1px solid black;
+    /*position: relative;
+    top: -75px;
+    left: 50px;
+    z-index: 22;*/
+}
+
+
+/*   context menu stuff */
+
+.contextMenu ul li {
+    background-color: : green;
+    width: 500px;
+}
+
+.context-menu-list {
+    position: absolute;
+    display: inline-block;
+    min-width: auto;
+    max-width: auto;
+    width: auto;
+    padding: 1px;
+    margin: 1px;
+    font-family: inherit;
+    font-size: inherit;
+    list-style-type: none;
+    background: #fff;
+    border: 1px solid #bebebe;
+    border-radius: .2em;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5)
+}
+
+.context-menu-item {
+    position: relative;
+    padding: .2em 2em .2em 1em;
+    color: #2f2f2f;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff
+}
+
+.genericPopupFromDevice{
+    position: relative;
+    top: 20%;
+    margin: auto;
+    /*left: 10%;
+    margin-left: 20px;*/
+    border: 2px solid blue;
+    background: whitesmoke;/* #ede9e8;*/
+    padding: 10px;
+    width: 500px;
+    z-index: 100;
+}
+
+
+.alarmPopupFromDevice{
+    position: relative;
+    top: 20%;
+    margin: auto;
+    /*left: 10%;
+    margin-left: 20px;*/
+    border: 2px solid blue;
+    background: whitesmoke;/* #ede9e8;*/
+    padding: 10px;
+    width: 1200px;
+    z-index: 100;
+}
+
+.alarmbuttonn {
+    padding: 4px 8px 4px 8px;
+    margin: 20px;
+}
+
+td.alarm-popup-retire {
+    /*background: url('/statusvectormap/images/retire.png') no-repeat center center;*/
+    width: 60px;
+    cursor: not-allowed;
+}
+
+td.alarm-popup-ack {
+    /*background: url('/statusvectormap/images/ack.png') no-repeat center center;*/
+    width: 100px;
+    cursor: default;
+    /*height: 190px;*/
+    /*padding: 5px;
+    margin: 5px;*/
+}

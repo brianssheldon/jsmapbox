@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     map = new mapboxgl.Map({
         container: 'map', // container id
-        style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
+        style: '/tweakedstyle.json',
         center: lonlat, // starting position
         zoom: 11 // starting zoom
     });
@@ -41,22 +41,22 @@ $(document).ready(function () {
         // console.log(map.getZoom());
     });
 
-    map.addControl(new mapboxgl.NavigationControl());
-    map.addControl(new mapboxgl.ScaleControl({
-        position: 'bottom-right',
-        maxWidth: 80,
-        unit: 'imperial'
-    }));
-
-    var navigationHtml =
-            '<button class="mapboxgl-ctrl-icon mapboxgl-ctrl-geolocate" type="button" onclick="flytolocation()" accesskey="h"' +
-            ' title="Reset map back to original view. Hot key: <alt> h"><span class="arrow";"></span></button>';
-    // adds a navigation button that resets the view back to where it started
-    $('.mapboxgl-ctrl-group').append(navigationHtml);
-
     map.on('load', function () {
         // the map is 'done' loading
         // doWebSocket();
+            map.addControl(new mapboxgl.NavigationControl());
+
+            map.addControl(new mapboxgl.ScaleControl({
+                position: 'bottom-right',
+                maxWidth: 80,
+                unit: 'imperial'
+            }));
+
+            var navigationHtml =
+                '<button class="mapboxgl-ctrl-icon mapboxgl-ctrl-geolocate" type="button" onclick="flytolocation()" accesskey="h"' +
+                ' title="Reset map back to original view. Hot key: <alt> h"><span class="arrow";"></span></button>';
+            // adds a navigation button that resets the view back to where it started
+            $('.mapboxgl-ctrl-group').append(navigationHtml);
     });
 });
 

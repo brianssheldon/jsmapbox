@@ -4,14 +4,14 @@
     "sources": {
         "mapbox": {
             "tiles": [
-                "https://localhost:3000/xxx/getTiles/united_states_of_america/{z}/{x}/{y}.pbf"
+                "http://localhost:8080/getTiles/united_states_of_america/{z}/{x}/{y}.pbf"
             ],
             "type": "vector",
             "maxzoom": 14
         }
     },
-    "sprite": "https://localhost:3000/status/style/bright/sprite",
-    "glyphs": "https://localhost:3000/status/style/bright/font/{fontstack}/{range}.pbf",
+    "sprite": "http://localhost:8080/bright/sprite",
+    "glyphs": "http://localhost:8080/bright/font/{fontstack}/{range}.pbf",
     "metadata": {
         "mapbox:autocomposite": true,
         "mapbox:type": "template",

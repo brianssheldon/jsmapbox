@@ -42,8 +42,6 @@ $(document).ready(function () {
     });
 
     map.on('load', function () {
-        // the map is 'done' loading
-        // doWebSocket();
             map.addControl(new mapboxgl.NavigationControl());
 
             map.addControl(new mapboxgl.ScaleControl({
